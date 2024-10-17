@@ -8,6 +8,8 @@
         "php": "^8.2",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "livewire/livewire": "^3.5",
+        "mhmiton/laravel-modules-livewire": "^3.0",
         "nwidart/laravel-modules": "^11.1"
     },
     "require-dev": {
@@ -27,7 +29,10 @@
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
             "Modules\\": "modules/"
-        }
+        },
+        "files": [
+            "./app/Utils/functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
