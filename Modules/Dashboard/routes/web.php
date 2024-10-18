@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Modules\Dashboard\Http\Controllers\DashboardController;
+use Modules\Dashboard\Http\Controllers\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,17 @@ use Modules\Dashboard\Http\Controllers\DashboardController;
 |
 */
 
-Route::group([], function () {
+Route::middleware('auth')->group(function () {
+
     Route::resource('dashboard-test', DashboardController::class)->names('dashboard');
+
+    Route::controller(SettingController::class)
+        ->prefix('settings')
+        ->name('settings.')
+        ->group(function () {
+            Route::get('/{section?}', 'index')->name('index');
+            Route::post('/store', 'store')->name('store');
+        });
 });
 
 

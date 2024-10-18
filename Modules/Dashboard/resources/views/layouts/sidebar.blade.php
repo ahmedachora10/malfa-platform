@@ -33,14 +33,26 @@
 
     <ul class="menu-inner py-1 ps ps--active-y">
 
-        <x-dashboard::sidebar.link :title="trans('sidebar.dashboard')" icon="home-circle" :link="route('dashboard')" />
+        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.dashboard')" icon="home-circle" :link="route('dashboard')" />
 
-        {{-- <x-dashboard::sidebar.link :title="trans('sidebar.settings')" icon="cog" link="#" :hasSubMenu="true"> --}}
+        <x-dashboard::sidebar.link-head>
+            <span>{{ trans('dashboard::sidebar.settings') }}</span>
+        </x-dashboard::sidebar.link-head>
+
+        <x-dashboard::sidebar.link title="Settings" icon="cog" :hasSubMenu="true">
+            @foreach (config('dashboard-settings', []) as $section => $options)
+                <x-dashboard::sidebar.link :title="trans('dashboard::settings.'.$section)"
+                :link="route('settings.index', str($section)->replace(' ', '-')->value())" />
+            @endforeach
+
+        </x-dashboard::sidebar.link>
+
+        {{-- <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.settings')" icon="cog" link="#" :hasSubMenu="true"> --}}
 
 
-            {{-- <x-dashboard::sidebar.link :title="trans('sidebar.subscribers')" icon="user" :link="route('subscribers.index')" :notification="$subscribersCount" />
+            {{-- <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.subscribers')" icon="user" :link="route('subscribers.index')" :notification="$subscribersCount" />
 
-            <x-dashboard::sidebar.link :title="trans('sidebar.services')" icon="server" :link="route('services.index')" /> --}}
+            <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.services')" icon="server" :link="route('services.index')" /> --}}
 
         <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
             <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>

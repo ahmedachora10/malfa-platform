@@ -151,7 +151,7 @@ class Setting extends Model
      */
     private static function getDefinedSettingFields()
     {
-        return collect(config('setting_fields'))->pluck('elements')->flatten(1);
+        return collect(config('dashboard-settings'))->pluck('elements')->flatten(1);
     }
 
     /**

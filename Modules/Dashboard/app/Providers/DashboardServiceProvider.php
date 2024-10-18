@@ -25,6 +25,9 @@ class DashboardServiceProvider extends ServiceProvider
         $this->registerConfig();
         $this->registerViews();
         $this->loadMigrationsFrom(module_path($this->name, 'database/migrations'));
+        $this->mergeConfigFrom(
+            module_path('Dashboard', 'Config/setting_fields.php'), 'dashboard-settings'
+        );
     }
 
     /**
