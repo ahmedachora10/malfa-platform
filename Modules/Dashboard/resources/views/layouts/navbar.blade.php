@@ -35,6 +35,7 @@
 
             <!-- Notifications -->
                 {{-- <livewire:dashboard.container.notifications-container theme="navbar" /> --}}
+                <livewire:user::containers.notifications />
             <!--/ Notifications -->
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">

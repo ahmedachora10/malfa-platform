@@ -15,9 +15,9 @@ use Modules\Dashboard\Http\Controllers\SettingController;
 |
 */
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::resource('dashboard-test', DashboardController::class)->names('dashboard');
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::controller(SettingController::class)
         ->prefix('settings')
