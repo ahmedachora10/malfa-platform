@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Dashboard\Cards;
+namespace Modules\Dashboard\App\View\Components\Cards;
 
 use Illuminate\View\Component;
 

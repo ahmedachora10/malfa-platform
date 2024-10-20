@@ -2,13 +2,20 @@
 
 namespace Modules\User\App\Enums;
 
-enum UserStatus:int
-{
-    case Blocked = 0;
-    case Active = 1;
+use App\Traits\EnumToArray;
+use App\Traits\HasLabel;
 
-    public static function toArray() :array
-    {
-        return array_map(fn($item) => $item->value, self::cases());
+enum UserStatus:string
+{
+    use HasLabel, EnumToArray;
+    case Blocked = '0';
+    case Active = '1';
+
+
+    public function color() {
+        return match ($this) {
+            self::Blocked => 'danger',
+            self::Active => 'primary',
+        };
     }
 }

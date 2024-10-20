@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\Dashboard\Tables;
+namespace Modules\Dashboard\App\View\Components\Tables;
 
 use Illuminate\View\Component;
 
-class Table1 extends Component
+class BaseTable extends Component
 {
     /**
      * Create a new component instance.
@@ -32,6 +32,6 @@ class Table1 extends Component
      */
     public function render()
     {
-        return view('dashboard::component.tables.table1');
+        return view('dashboard::components.tables.base-table');
     }
 }

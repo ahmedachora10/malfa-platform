@@ -23,6 +23,6 @@ class Toast extends Component
      */
     public function render()
     {
-        return view('dashboard::component.toast');
+        return view('dashboard::components.toast');
     }
 }

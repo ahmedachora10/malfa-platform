@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Dashboard\Cards;
+namespace Modules\Dashboard\App\View\Components\Cards;
 
 use App\Models\Service;
 use Closure;
@@ -24,6 +24,6 @@ class ServiceCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('dashboard::component.cards.service-card');
+        return view('dashboard::components.cards.service-card');
     }
 }

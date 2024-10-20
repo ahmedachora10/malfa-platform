@@ -14,6 +14,6 @@ use Modules\User\Http\Controllers\UserController;
 |
 */
 
-Route::group([], function () {
-    Route::resource('user', UserController::class)->names('user');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::resource('users', UserController::class)->names('users');
 });

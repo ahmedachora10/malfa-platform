@@ -35,6 +35,12 @@
 
         <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.dashboard')" icon="home-circle" :link="route('dashboard')" />
 
+        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.users')" icon="user" :link="route('users.index')" />
+
+        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.contact us')" icon="envelope" :link="route('contact.index')" />
+
+        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.subscribers')" icon="user" :link="route('subscribers.index')" />
+
         <x-dashboard::sidebar.link-head>
             <span>{{ trans('dashboard::sidebar.settings') }}</span>
         </x-dashboard::sidebar.link-head>

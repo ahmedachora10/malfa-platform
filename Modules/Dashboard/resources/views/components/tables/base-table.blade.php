@@ -34,11 +34,11 @@
                             @if (empty($col))
                                 <th></th>
                             @else
-                                <th> {{ $translate ? trans('table.columns.' . strtolower($col)) : $col }} </th>
+                                <th> {{ $translate ? trans('dashboard::table.columns.' . strtolower($col)) : $col }} </th>
                             @endif
                         @endforeach
                         @if ($withActions)
-                            <th> {{ trans('table.columns.actions') }} </th>
+                            <th> {{ trans('dashboard::table.columns.actions') }} </th>
                         @endif
                     </tr>
                 </thead>

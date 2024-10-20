@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Dashboard\Cards;
+namespace Modules\Dashboard\App\View\Components\Cards;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -26,6 +26,6 @@ class UserCorpCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('dashboard::component.cards.user-corp-card');
+        return view('dashboard::components.cards.user-corp-card');
     }
 }

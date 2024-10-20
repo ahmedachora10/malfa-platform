@@ -23,6 +23,6 @@ class Switcher extends Component
      */
     public function render()
     {
-        return view('dashboard::component.switcher');
+        return view('dashboard::components.switcher');
     }
 }

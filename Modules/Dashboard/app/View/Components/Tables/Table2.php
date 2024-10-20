@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Dashboard\Tables;
+namespace Modules\Dashboard\App\View\Components\Tables;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -19,6 +19,6 @@ class Table2 extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('dashboard::component.tables.table2');
+        return view('dashboard::components.tables.table2');
     }
 }

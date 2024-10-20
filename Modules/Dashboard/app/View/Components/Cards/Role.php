@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Dashboard\Cards;
+namespace Modules\Dashboard\App\View\Components\Cards;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -31,6 +31,6 @@ class Role extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('dashboard::component.cards.role');
+        return view('dashboard::components.cards.role');
     }
 }

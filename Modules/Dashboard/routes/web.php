@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Dashboard\Http\Controllers\ContactController;
 use Modules\Dashboard\Http\Controllers\DashboardController;
 use Modules\Dashboard\Http\Controllers\SettingController;
+use Modules\Dashboard\Http\Controllers\SubscriberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,10 @@ use Modules\Dashboard\Http\Controllers\SettingController;
 Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('contact', ContactController::class)->only(['index', 'destroy'])->names('contact');
+
+    Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy'])->names('subscribers');
 
     Route::controller(SettingController::class)
         ->prefix('settings')
