@@ -69,8 +69,7 @@ return [
     'update record' => 'Update Record',
     'update certificate' => 'Update Certificate',
 
-    'remember me' => 'Remember Me',
-    'sign in' => 'Sign In',
+    'total' => 'Total',
 
     'corp details' => 'Corp Details',
     'reports' => 'Reports',
@@ -117,5 +116,8 @@ return [
     'subscribe package request' => 'Subscribe Request',
     'select the element' => 'Select The Element',
     'manager' => 'Manager',
-    'user.assign' => 'Assign Employee'
+    'user.assign' => 'Assign Employee',
+    'created' => 'Created',
+    'updated' => 'Updated',
+    'deleted' => 'Deleted',
 ];

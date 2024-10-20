@@ -41,6 +41,8 @@
 
         <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.subscribers')" icon="user" :link="route('subscribers.index')" />
 
+        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.activities')" icon="archive" :link="route('activities.index')" />
+
         <x-dashboard::sidebar.link-head>
             <span>{{ trans('dashboard::sidebar.settings') }}</span>
         </x-dashboard::sidebar.link-head>

@@ -5,6 +5,7 @@ use Modules\Dashboard\Http\Controllers\ContactController;
 use Modules\Dashboard\Http\Controllers\DashboardController;
 use Modules\Dashboard\Http\Controllers\SettingController;
 use Modules\Dashboard\Http\Controllers\SubscriberController;
+use Modules\Dashboard\Livewire\Containers\Activities;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('contact', ContactController::class)->only(['index', 'destroy'])->names('contact');
 
     Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy'])->names('subscribers');
+
+    Route::get('activities', Activities::class)->name('activities.index');
 
     Route::controller(SettingController::class)
         ->prefix('settings')

@@ -102,6 +102,7 @@ return [
         'activity' => 'Activity',
         'due date' => 'Due Date',
         'status' => 'Status',
+        'user' => 'User',
     ],
     'empty' => 'No Records'
 ];
