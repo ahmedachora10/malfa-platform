@@ -123,6 +123,8 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
-    'pagination' => 9
+    'pagination' => 9,
+
+    'locales' => ['ar','en'],
 
 ];
