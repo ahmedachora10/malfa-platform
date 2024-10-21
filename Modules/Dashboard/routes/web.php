@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 use Modules\Dashboard\Http\Controllers\ContactController;
 use Modules\Dashboard\Http\Controllers\DashboardController;
@@ -21,25 +22,39 @@ use Modules\Dashboard\Livewire\Containers\Activities;
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::prefix('{locale}')
+    ->where(['locale' => '[a-zA-Z]{2}'])
+    ->middleware(SetLocale::class)
+    ->group( function () {
 
-    Route::resource('contact', ContactController::class)->only(['index', 'destroy'])->names('contact');
+        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy'])->names('subscribers');
+        Route::resource('our-services', OurServiceController::class)
+            ->parameters('ourService');
 
-    Route::resource('our-services', OurServiceController::class)
-    ->parameters('ourService')
-    ->names('our-services');
+        Route::resource('subscribers', SubscriberController::class)->only(['index', 'destroy'])->names('subscribers');
 
-    Route::get('activities', Activities::class)->name('activities.index');
+        Route::resource('contact', ContactController::class)->only(['index', 'destroy'])->names('contact');
 
-    Route::controller(SettingController::class)
-        ->prefix('settings')
-        ->name('settings.')
-        ->group(function () {
-            Route::get('/{section?}', 'index')->name('index');
-            Route::post('/store', 'store')->name('store');
-        });
+        Route::controller(SettingController::class)
+            ->prefix('settings')
+            ->name('settings.')
+            ->group(function () {
+                Route::get('/{section?}', 'index')->name('index');
+                Route::post('/store', 'store')->name('store');
+            });
+
+        Route::get('activities', Activities::class)->name('activities.index');
+    });
+
+
+
+
+    // Route::resource('our-services', OurServiceController::class)
+    // ->parameters('ourService')
+    // ->names('our-services');
+
+
 });
 
 

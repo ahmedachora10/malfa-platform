@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\SetLocale;
 use Illuminate\Support\Facades\Route;
 use Modules\User\Http\Controllers\UserController;
 
@@ -14,6 +15,12 @@ use Modules\User\Http\Controllers\UserController;
 |
 */
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('users', UserController::class)->names('users');
-});
+
+Route::prefix('{locale}')
+    ->where(['locale' => '[a-zA-Z]{2}'])
+    ->middleware(SetLocale::class)
+    ->group(function () {
+        Route::middleware(['auth', 'verified'])->group(function () {
+            Route::resource('users', UserController::class)->names('users');
+        });
+    });

@@ -16,7 +16,7 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $locale)
     {
         return view('user::index');
     }
@@ -24,7 +24,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $locale)
     {
         $status = UserStatus::cases();
         return view('user::create',compact('status'));
@@ -33,7 +33,7 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(UserRequest $request)
+    public function store(UserRequest $request, string $locale)
     {
         $this->userService->store(UserActionDTO::fromWebRequest($request->validated()));
         return redirect()->route('users.index')->with('success', trans('messages.created'));
@@ -42,7 +42,7 @@ class UserController extends Controller
     /**
      * Show the specified resource.
      */
-    public function show(User $user)
+    public function show(string $locale, User $user)
     {
         return view('user::show');
     }
@@ -50,7 +50,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(string $locale, User $user)
     {
         $status = UserStatus::cases();
         return view('user::edit',compact('user', 'status'));
@@ -59,7 +59,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UserRequest $request, User $user)
+    public function update(UserRequest $request, string $locale, User $user)
     {
         // dd($request->validated(), UserActionDTO::fromWebRequest($request->validated() + ['user' => $user]));
         $this->userService->update(UserActionDTO::fromWebRequest($request->validated() + ['user' => $user]), $user);
@@ -69,7 +69,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(string $locale, User $user)
     {
         $this->userService->delete(model: $user);
         return redirect()->route('users.index')->with('success', trans('messages.deleted'));

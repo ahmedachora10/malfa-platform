@@ -10,7 +10,7 @@ class DashboardController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $locale)
     {
         return view('dashboard::index');
     }

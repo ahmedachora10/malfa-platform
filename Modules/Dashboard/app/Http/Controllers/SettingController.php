@@ -13,7 +13,7 @@ class SettingController extends Controller
 {
     public function __construct(protected UploadFileService $uploadFileService) {}
 
-    public function index($section = '')
+    public function index(string $locale, $section = '')
     {
         $settings = config('dashboard-settings', []);
 
@@ -30,7 +30,7 @@ class SettingController extends Controller
         return view('dashboard::settings.index', compact('settings'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, string $locale)
     {
         $rules = Setting::getValidationRules();
         $data = $request->validate($rules, $request->all());

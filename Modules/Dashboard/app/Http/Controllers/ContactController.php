@@ -13,12 +13,12 @@ class ContactController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(string $locale)
     {
         return view('dashboard::contact.index');
     }
 
-    public function destroy(Contact $contact)
+    public function destroy(string $locale, Contact $contact)
     {
         $this->contactService->delete($contact);
         return redirect()->route('contact.index')->with('success', trans('messages.deleted'));
