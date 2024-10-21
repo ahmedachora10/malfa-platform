@@ -54,7 +54,6 @@ class User extends Authenticatable implements HasActivityLogsDescription
             'status' => UserStatus::class
         ];
     }
-
     public function getLogDescription(): string
     {
         return $this->name;
