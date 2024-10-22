@@ -11,7 +11,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Modules\Dashboard\App\Traits\LogActivityOptions;
 use Modules\User\App\Enums\UserStatus;
-use Spatie\Activitylog\LogOptions;
 
 class User extends Authenticatable implements HasActivityLogsDescription
 {
