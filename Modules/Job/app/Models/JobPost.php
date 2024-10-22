@@ -1,32 +1,32 @@
 <?php
 
-namespace $NAMESPACE$;
+namespace Modules\Job\Models;
 
+use App\Contracts\HasActivityLogsDescription;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Modules\Dashboard\App\Traits\LogActivityOptions;
 use Spatie\Translatable\HasTranslations;
-// use $MODULE_NAMESPACE$\$MODULE$\Database\Factories\$NAME$Factory;
 
+// use Modules\Job\Database\Factories\JobPostFactory;
 
-class $CLASS$ extends Model implements HasActivityLogsDescription
+class JobPost extends Model implements HasActivityLogsDescription
 {
     use HasFactory, HasTranslations, LogActivityOptions;
 
     /**
      * The attributes that are mass assignable.
      */
-    protected $fillable = $FILLABLE$;
-
+    protected $fillable = ['title'];
     public $translatable = ['title'];
 
-    // protected static function newFactory(): $NAME$Factory
+    // protected static function newFactory(): JobPostFactory
     // {
-    //     // return $NAME$Factory::new();
+    //     // return JobPostFactory::new();
     // }
 
     public function getLogDescription(): string
     {
-        return '';
+        return $this->title;
     }
 }

@@ -41,7 +41,9 @@
 
         <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.subscribers')" icon="user" :link="route('subscribers.index')" />
 
-        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.services')" icon="category" :link="route('our-services.index', app()->getLocale())" />
+        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.services')" icon="category" :link="route('our-services.index')" />
+
+        <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.jobs')" icon="server" :link="route('jobs.index')" />
 
         <x-dashboard::sidebar.link :title="trans('dashboard::sidebar.activities')" icon="archive" :link="route('activities.index')" />
 
