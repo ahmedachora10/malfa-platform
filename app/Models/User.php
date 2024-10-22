@@ -14,7 +14,6 @@ use Modules\User\App\Enums\UserStatus;
 
 class User extends Authenticatable implements HasActivityLogsDescription
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasThumbnail, LogActivityOptions;
 
     /**
