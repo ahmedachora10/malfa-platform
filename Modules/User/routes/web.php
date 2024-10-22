@@ -18,7 +18,6 @@ use Modules\User\Http\Controllers\UserController;
 
 Route::prefix('{locale}')
     ->where(['locale' => '[a-zA-Z]{2}'])
-    ->middleware(SetLocale::class)
     ->group(function () {
         Route::middleware(['auth', 'verified'])->group(function () {
             Route::resource('users', UserController::class)->names('users');

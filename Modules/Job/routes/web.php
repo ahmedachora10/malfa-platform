@@ -18,7 +18,6 @@ use Modules\Job\Http\Controllers\JobController;
 
 Route::prefix('{locale}')
 ->where(['locale' => '[a-zA-Z]{2}'])
-->middleware(SetLocale::class)
     ->group( function () {
     Route::resource('jobs', JobController::class)->names('jobs');
 });

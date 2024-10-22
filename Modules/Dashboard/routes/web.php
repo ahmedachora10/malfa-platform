@@ -24,7 +24,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::prefix('{locale}')
     ->where(['locale' => '[a-zA-Z]{2}'])
-    ->middleware(SetLocale::class)
     ->group( function () {
 
         Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');

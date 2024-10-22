@@ -3,9 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn() => redirect()->to('/' . app()->getLocale()));
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -13,4 +11,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+Route::prefix('{locale}')
+->where(['locale' => '[a-zA-Z]{2}'])
+->group(function () {
+        Route::get('/', function () {
+            return view('welcome');
+        });
+
+        require __DIR__.'/auth.php';
+    });
