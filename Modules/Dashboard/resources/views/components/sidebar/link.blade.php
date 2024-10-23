@@ -1,3 +1,11 @@
+@props([
+    'link' => 'javascript:viod(0)',
+    'icon' => '',
+    'title' => null,
+    'hasSubMenu' => false,
+    'notification' => false
+
+])
 <li class="menu-item">
     <a href="{{ $link }}" @class(['menu-link', 'menu-toggle' => $hasSubMenu])>
         @if ($icon)
@@ -8,7 +16,6 @@
             <span class="badge badge-demo bg-label-warning ms-auto">{{ $notification }} جديد</span>
         @endif
     </a>
-
 
     @if ($hasSubMenu)
         <ul class="menu-sub">
