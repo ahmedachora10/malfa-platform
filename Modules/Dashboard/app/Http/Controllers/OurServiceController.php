@@ -3,8 +3,8 @@
 namespace Modules\Dashboard\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Modules\Dashboard\App\DTO\OurServiceActionDTO;
-use Modules\Dashboard\App\Services\OurServicesService;
+use Modules\Dashboard\DTO\OurServiceActionDTO;
+use Modules\Dashboard\Services\OurServicesService;
 use Modules\Dashboard\Http\Requests\OurServiceRequest;
 use Modules\Dashboard\Models\OurService;
 

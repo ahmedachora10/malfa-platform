@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\Rules\Password;
-use Modules\User\App\Enums\UserStatus;
+use Modules\User\Enums\UserStatus;
 
 class UserRequest extends FormRequest
 {

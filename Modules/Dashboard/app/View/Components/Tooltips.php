@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Dashboard;
+namespace Modules\Dashboard\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;

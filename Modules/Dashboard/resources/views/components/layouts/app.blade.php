@@ -111,14 +111,14 @@
         <div class="layout-container">
 
             <!-- sidebar -->
-            @include('dashboard::layouts.sidebar')
+            @include('dashboard::components.layouts.sidebar')
             <!-- / sidebar -->
 
             <!-- Layout container -->
             <div class="layout-page">
 
                 <!-- Navbar -->
-                @include('dashboard::layouts.navbar')
+                @include('dashboard::components.layouts.navbar')
                 <!-- / Navbar -->
 
                 <div class="content-wrapper">
@@ -133,7 +133,7 @@
 
 
                     <!-- Footer -->
-                    @include('dashboard::layouts.footer')
+                    @include('dashboard::components.layouts.footer')
                     <!-- / Footer -->
 
                     <div class="layout-overlay layout-menu-toggle"></div>

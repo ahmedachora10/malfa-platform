@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\App\DTO;
+namespace Modules\User\DTO;
 use App\Contracts\DTO\DTOInterface;
 use App\Contracts\DTO\FromWebRequest;
 use App\Contracts\ToArray;

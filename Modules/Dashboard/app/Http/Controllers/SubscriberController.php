@@ -4,7 +4,7 @@ namespace Modules\Dashboard\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Modules\Dashboard\App\Services\SubscriberService;
+use Modules\Dashboard\Services\SubscriberService;
 use Modules\Dashboard\Models\Subscriber;
 
 class SubscriberController extends Controller

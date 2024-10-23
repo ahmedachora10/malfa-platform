@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\App\Services;
+namespace Modules\User\Services;
 
 use App\Contracts\Actions\DeleteAction;
 use App\Contracts\Actions\PaginateAction;
@@ -10,7 +10,7 @@ use App\Contracts\DTO\DTOInterface;
 use App\Models\User;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
-use Modules\User\App\DTO\UserActionDTO;
+use Modules\User\DTO\UserActionDTO;
 
 class UserService implements StoreAction,  UpdateAction, DeleteAction, PaginateAction {
     public function __construct( private User $model ) {}

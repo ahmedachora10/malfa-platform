@@ -6,7 +6,7 @@ use App\Contracts\HasActivityLogsDescription;
 use App\Traits\HasThumbnail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Dashboard\App\Traits\LogActivityOptions;
+use Modules\Dashboard\Traits\LogActivityOptions;
 use Spatie\Translatable\HasTranslations;
 
 // use Modules\Dashboard\Database\Factories\OurServiceFactory;

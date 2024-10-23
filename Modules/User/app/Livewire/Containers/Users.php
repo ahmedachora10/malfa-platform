@@ -5,7 +5,7 @@ namespace Modules\User\Livewire\Containers;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
-use Modules\User\App\Services\UserService;
+use Modules\User\Services\UserService;
 
 class Users extends Component
 {

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Notification;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
-use Modules\User\App\Services\NotificationService;
+use Modules\User\Services\NotificationService;
 use Modules\User\Notifications\UserAction;
 
 class Notifications extends Component

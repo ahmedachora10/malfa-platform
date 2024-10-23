@@ -9,8 +9,8 @@ use App\Traits\HasThumbnail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Modules\Dashboard\App\Traits\LogActivityOptions;
-use Modules\User\App\Enums\UserStatus;
+use Modules\Dashboard\Traits\LogActivityOptions;
+use Modules\User\Enums\UserStatus;
 
 class User extends Authenticatable implements HasActivityLogsDescription
 {

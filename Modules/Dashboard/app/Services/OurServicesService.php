@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Dashboard\App\Services;
+namespace Modules\Dashboard\Services;
 
 use App\Contracts\Actions\PaginateAction;
 use App\Contracts\Actions\StoreAction;
@@ -8,7 +8,7 @@ use App\Contracts\Actions\UpdateAction;
 use App\Contracts\DTO\DTOInterface;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Dashboard\App\DTO\OurServiceActionDTO;
+use Modules\Dashboard\DTO\OurServiceActionDTO;
 use Modules\Dashboard\Models\OurService;
 
 final class OurServicesService implements StoreAction, UpdateAction, PaginateAction {

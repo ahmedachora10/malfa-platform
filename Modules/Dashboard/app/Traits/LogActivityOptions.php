@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Dashboard\App\Traits;
+namespace Modules\Dashboard\Traits;
 
 use App\Contracts\HasActivityLogsDescription;
 use Spatie\Activitylog\LogOptions;

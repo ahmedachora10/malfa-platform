@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Job\App\Services;
+namespace Modules\Job\Services;
 
 use App\Contracts\Actions\PaginateAction;
 use App\Contracts\Actions\StoreAction;
@@ -8,7 +8,7 @@ use App\Contracts\Actions\UpdateAction;
 use App\Contracts\DTO\DTOInterface;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
-use Modules\Job\App\DTO\JobPostActionDTO;
+use Modules\Job\DTO\JobPostActionDTO;
 use Modules\Job\Models\JobPost;
 
 final class JobPostService implements StoreAction, UpdateAction, PaginateAction {

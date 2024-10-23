@@ -1,10 +1,10 @@
 <?php
 
-namespace Modules\User\App\Services;
+namespace Modules\User\Services;
 
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
-use Modules\User\App\DTO\Notifications\UserNotificationDTO;
+use Modules\User\DTO\Notifications\UserNotificationDTO;
 
 class NotificationService {
 

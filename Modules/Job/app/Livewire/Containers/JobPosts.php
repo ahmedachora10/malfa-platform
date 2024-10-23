@@ -5,7 +5,7 @@ namespace Modules\Job\Livewire\Containers;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
-use Modules\Job\App\Services\JobPostService;
+use Modules\Job\Services\JobPostService;
 
 class JobPosts extends Component
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\App\Enums;
+namespace Modules\User\Enums;
 
 use App\Traits\EnumToArray;
 use App\Traits\HasLabel;

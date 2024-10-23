@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\App\DTO\Notifications;
+namespace Modules\User\DTO\Notifications;
 use App\Contracts\DTO\DTOInterface;
 use Illuminate\Support\Collection;
 

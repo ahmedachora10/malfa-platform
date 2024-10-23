@@ -4,7 +4,7 @@ namespace Modules\Dashboard\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Modules\Dashboard\App\Services\ContactService;
+use Modules\Dashboard\Services\ContactService;
 use Modules\Dashboard\Models\Contact;
 
 class ContactController extends Controller

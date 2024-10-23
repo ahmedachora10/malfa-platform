@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Dashboard\App\Services;
+namespace Modules\Dashboard\Services;
 
 use App\Contracts\Actions\PaginateAction;
 use Illuminate\Contracts\Pagination\Paginator;

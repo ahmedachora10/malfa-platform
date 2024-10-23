@@ -1,4 +1,4 @@
-<x-dashboard::app-layout>
+<x-dashboard::layouts.app>
 
     <form action="{{ route('users.update', $user) }}" method="post" enctype="multipart/form-data">
         @csrf
@@ -47,4 +47,4 @@
 
     </form>
 
-</x-dashboard::app-layout>
+</x-dashboard::layouts.app>

@@ -10,7 +10,7 @@ class [class] extends Component
 {
     use WithPagination;
 
-    #[Layout('dashboard::layouts.app')]
+    #[Layout('dashboard::components.layouts.app')]
     public function render()
     {
         return view('[view]');

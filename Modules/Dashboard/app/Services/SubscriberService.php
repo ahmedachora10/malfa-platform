@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Dashboard\App\Services;
+namespace Modules\Dashboard\Services;
 
 use App\Contracts\Actions\PaginateAction;
 use App\Contracts\Actions\StoreAction;
@@ -9,7 +9,7 @@ use App\Contracts\DTO\DTOInterface;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Dashboard\Models\Subscriber;
-use Modules\User\App\DTO\SubscriberActionDTO;
+use Modules\User\DTO\SubscriberActionDTO;
 
 final class SubscriberService implements StoreAction, UpdateAction, PaginateAction {
     public function __construct(private Subscriber $model) {}

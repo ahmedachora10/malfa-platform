@@ -5,7 +5,7 @@ namespace Modules\Dashboard\Livewire\Containers;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
-use Modules\Dashboard\App\Services\SubscriberService;
+use Modules\Dashboard\Services\SubscriberService;
 
 class Subscribers extends Component
 {

@@ -4,8 +4,8 @@ namespace Modules\Job\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Modules\Job\App\DTO\JobPostActionDTO;
-use Modules\Job\App\Services\JobPostService;
+use Modules\Job\DTO\JobPostActionDTO;
+use Modules\Job\Services\JobPostService;
 use Modules\Job\Http\Requests\JobPostRequest;
 use Modules\Job\Models\JobPost;
 

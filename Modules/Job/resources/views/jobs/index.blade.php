@@ -1,3 +1,3 @@
-<x-dashboard::app-layout>
+<x-dashboard::layouts.app>
     <livewire:job::containers.job-posts />
-</x-dashboard::app-layout>
+</x-dashboard::layouts.app>

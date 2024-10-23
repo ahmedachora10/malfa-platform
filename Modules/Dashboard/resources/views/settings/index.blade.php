@@ -1,4 +1,4 @@
-<x-dashboard::app-layout>
+<x-dashboard::layouts.app>
 
 <form method="post" action="{{ route('settings.store') }}" class="form-horizontal" role="form"
         enctype="multipart/form-data">
@@ -47,4 +47,4 @@
         </div>
     </form>
 
-</x-dashboard::app-layout>
+</x-dashboard::layouts.app>

@@ -22,3 +22,4 @@ yarn-error.log
 /.zed
 composer.phar
 composer.lock
+.htaccess

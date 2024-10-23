@@ -1,4 +1,4 @@
-<x-dashboard::app-layout>
+<x-dashboard::layouts.app>
 
    <x-dashboard::tab-list :route="route('jobs.store')">
     <x-slot:arForm>
@@ -14,4 +14,4 @@
     </x-slot:enForm>
 </x-dashboard::tab-list>
 
-</x-dashboard::app-layout>
+</x-dashboard::layouts.app>

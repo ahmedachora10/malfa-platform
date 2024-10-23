@@ -4,7 +4,7 @@ namespace $NAMESPACE$;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Modules\Dashboard\App\Traits\LogActivityOptions;
+use Modules\Dashboard\Traits\LogActivityOptions;
 use Spatie\Translatable\HasTranslations;
 // use $MODULE_NAMESPACE$\$MODULE$\Database\Factories\$NAME$Factory;
 

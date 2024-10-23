@@ -1,3 +1,13 @@
+@props([
+    'title' => null,
+    'createAction' => null,
+    'columns' => null,
+    'actions' => null,
+    'withActions' => true,
+    'withId' => true,
+    'responsive' => true,
+    'translate' => true,
+])
 <div class="card">
 
     <div @class([

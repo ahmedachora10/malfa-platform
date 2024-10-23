@@ -5,7 +5,7 @@ namespace Modules\Dashboard\Livewire\Containers;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
-use Modules\Dashboard\App\Services\ActivityService;
+use Modules\Dashboard\Services\ActivityService;
 use Spatie\Activitylog\Models\Activity;
 
 class Activities extends Component
@@ -17,7 +17,7 @@ class Activities extends Component
         $this->dispatch('alert-message', message: trans('messages.deleted'));
     }
 
-    #[Layout('dashboard::layouts.app')]
+    #[Layout('dashboard::components.layouts.app')]
     public function render()
     {
         return view('dashboard::livewire.containers.activities', [

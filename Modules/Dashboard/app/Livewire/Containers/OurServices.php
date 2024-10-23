@@ -5,7 +5,7 @@ namespace Modules\Dashboard\Livewire\Containers;
 use Livewire\Component;
 use Livewire\Attributes\Layout;
 use Livewire\WithPagination;
-use Modules\Dashboard\App\Services\OurServicesService;
+use Modules\Dashboard\Services\OurServicesService;
 
 class OurServices extends Component
 {

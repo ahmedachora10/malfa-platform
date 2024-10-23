@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\User\App\DTO;
+namespace Modules\User\DTO;
 use App\Contracts\DTO\DTOInterface;
 use App\Contracts\DTO\FromWebRequest;
 use App\Contracts\ToArray;
@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Services\UploadFileService;
 use App\Traits\PrepareAttachments;
 use Illuminate\Support\Facades\Hash;
-use Modules\User\App\Enums\UserStatus;
+use Modules\User\Enums\UserStatus;
 
 readonly class UserActionDTO implements DTOInterface, FromWebRequest, ToArray {
     use PrepareAttachments;

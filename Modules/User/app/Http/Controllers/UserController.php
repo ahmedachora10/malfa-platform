@@ -5,9 +5,9 @@ namespace Modules\User\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Modules\User\App\DTO\UserActionDTO;
-use Modules\User\App\Enums\UserStatus;
-use Modules\User\App\Services\UserService;
+use Modules\User\DTO\UserActionDTO;
+use Modules\User\Enums\UserStatus;
+use Modules\User\Services\UserService;
 use Modules\User\Http\Requests\UserRequest;
 
 class UserController extends Controller
