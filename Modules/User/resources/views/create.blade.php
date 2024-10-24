@@ -37,7 +37,6 @@
             </div>
             @endforeach
 
-
             <div class="col-12">
                 <x-dashboard::button type="submit" name="Save" class="btn-primary mt-3" />
             </div>

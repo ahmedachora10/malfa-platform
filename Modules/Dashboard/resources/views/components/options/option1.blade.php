@@ -1,3 +1,10 @@
+@props([
+    'title' => '',
+    'description' => '',
+    'icon' => 'bx bx-key',
+    'color' => 'primary',
+])
+
 <div class="form-check custom-option custom-option-icon shadow-sm border-none">
     <label class="form-check-label custom-option-content" for="customCheckboxIcon1">
         <span
