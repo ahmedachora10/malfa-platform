@@ -3,21 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => redirect()->to('/' . app()->getLocale()));
+// Route::get('/', fn() => redirect(status: 301)->to('/' . app()->getLocale()));
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::view('/', 'welcome');
 
-
-Route::prefix('{locale}')
-->where(['locale' => '[a-zA-Z]{2}'])
-->group(function () {
-        Route::get('/', function () {
-            return view('welcome');
-        });
-
-        require __DIR__.'/auth.php';
-    });
+require __DIR__.'/auth.php';

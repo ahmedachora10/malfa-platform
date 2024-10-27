@@ -47,7 +47,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                        <a class="dropdown-item" href="">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
@@ -66,7 +66,7 @@
                         <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                        <a class="dropdown-item" href="">
                             <i class="bx bx-user me-2"></i>
                             <span class="align-middle">{{ trans('common.my profile') }}</span>
                         </a>
