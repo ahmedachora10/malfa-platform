@@ -11,8 +11,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Modules\Dashboard\Traits\LogActivityOptions;
 use Modules\User\Enums\UserStatus;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements HasActivityLogsDescription
+class User extends Authenticatable implements HasActivityLogsDescription, JWTSubject
 {
     use HasFactory, Notifiable, HasThumbnail, LogActivityOptions;
 
@@ -55,5 +56,13 @@ class User extends Authenticatable implements HasActivityLogsDescription
     public function getLogDescription(): string
     {
         return $this->name;
+    }
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 }
