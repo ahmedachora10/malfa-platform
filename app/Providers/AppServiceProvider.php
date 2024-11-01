@@ -24,15 +24,15 @@ class AppServiceProvider extends ServiceProvider
     {
         app()->singleton('settings', fn() => Setting::getAllSettings());
 
-        foreach (Module::allEnabled() as $module) {
-            $modulePath = $module->getPath() . '/routes/web.php';
+        // foreach (Module::allEnabled() as $module) {
+        //     $modulePath = $module->getPath() . '/routes/web.php';
 
-            if (file_exists($modulePath)) {
-                Route::middleware('web')
-                    ->prefix('{locale}')
-                    ->where(['locale' => '[a-zA-Z]{2}'])
-                    ->group($modulePath);
-            }
-        }
+        //     if (file_exists($modulePath)) {
+        //         Route::middleware(['web'])
+        //             ->prefix('{locale}')
+        //             ->where(['locale' => '[a-zA-Z]{2}'])
+        //             ->group($modulePath);
+        //     }
+        // }
     }
 }

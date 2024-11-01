@@ -5,7 +5,6 @@ use App\Contracts\DTO\DTOInterface;
 use App\Contracts\DTO\FromWebRequest;
 use App\Contracts\ToArray;
 use App\Models\User;
-use App\Services\UploadFileService;
 use App\Traits\PrepareAttachments;
 use Illuminate\Support\Facades\Hash;
 use Modules\User\Enums\UserStatus;

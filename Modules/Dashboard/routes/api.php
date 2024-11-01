@@ -14,6 +14,6 @@ use Modules\Dashboard\Http\Controllers\DashboardController;
  *
 */
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
+Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('dashboard', DashboardController::class)->names('dashboard');
 });

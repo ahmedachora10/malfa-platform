@@ -1,11 +1,12 @@
 <?php
 
-namespace Modules\User\DTO;
+namespace Modules\Dashboard\DTO;
 use App\Contracts\DTO\DTOInterface;
+use App\Contracts\DTO\FromApiRequest;
 use App\Contracts\DTO\FromWebRequest;
 use App\Contracts\ToArray;
 
-readonly class ContactActionDTO implements DTOInterface, FromWebRequest, ToArray {
+readonly class ContactActionDTO implements DTOInterface, FromWebRequest, FromApiRequest, ToArray {
     public function __construct(
         public readonly string $name,
         public readonly string $email,
@@ -26,6 +27,16 @@ readonly class ContactActionDTO implements DTOInterface, FromWebRequest, ToArray
     }
 
     public static function fromWebRequest(array $data): static
+    {
+        return new self(
+            name: $data['name'],
+            email: $data['email'],
+            phone: $data['phone'],
+            message: $data['message'],
+            subject: $data['subject'],
+        );
+    }
+    public static function fromApiRequest(array $data): static
     {
         return new self(
             name: $data['name'],

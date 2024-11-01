@@ -14,6 +14,6 @@ use Modules\Job\Http\Controllers\JobController;
  *
 */
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
+Route::middleware(['auth:api'])->group(function () {
     Route::apiResource('job', JobController::class)->names('job');
 });

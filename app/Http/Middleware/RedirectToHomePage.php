@@ -15,18 +15,17 @@ class RedirectToHomePage
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $languages = config('app.locales');
-        $currentLocale = $request->segment(1);
-        $fullUrl = $request->fullUrl();
-        // dd(str($fullUrl)->replaceEnd('/', '')->value() . '/' . app()->getLocale());
+        if(!$request->expectsJson() && $request->isMethod('get')) {
+            $languages = config('app.locales');
+            $currentLocale = $request->segment(1);
+            $fullUrl = $request->fullUrl();
 
-        // dd($currentLocale,str($request->fullUrl())->replace($currentLocale ?? '', app()->getLocale() . '/' . $currentLocale)->value());
+            if (!$currentLocale)
+                return redirect(status: 301)->to(str($fullUrl)->replaceEnd('/', '')->value() . '/' . app()->getLocale());
 
-        if (!$currentLocale)
-            return redirect(status: 301)->to(str($fullUrl)->replaceEnd('/', '')->value() . '/' . app()->getLocale());
-
-        if (!in_array($currentLocale, $languages))
-            return redirect(status: 301)->to(str($fullUrl)->replace($currentLocale, app()->getLocale().'/'. $currentLocale)->value());
+            if (!in_array($currentLocale, $languages))
+                return redirect(status: 301)->to(str($fullUrl)->replace($currentLocale, '/'. $currentLocale)->value());
+        }
 
         return $next($request);
     }

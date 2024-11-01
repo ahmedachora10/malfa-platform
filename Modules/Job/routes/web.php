@@ -16,8 +16,6 @@ use Modules\Job\Http\Controllers\JobController;
 */
 
 
-Route::prefix('{locale}')
-->where(['locale' => '[a-zA-Z]{2}'])
-    ->group( function () {
+Route::middleware('auth')->group( function () {
     Route::resource('jobs', JobController::class)->names('jobs');
 });

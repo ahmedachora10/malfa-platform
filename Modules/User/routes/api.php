@@ -1,19 +1,30 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Modules\Dashboard\Http\Controllers\Api\ContactController;
+use Modules\Dashboard\Http\Controllers\Api\OurServiceController;
+use Modules\Dashboard\Http\Controllers\Api\SubscriberController;
+use Modules\User\Http\Controllers\Api\AuthenticatedSessionController;
 use Modules\User\Http\Controllers\UserController;
 
-/*
- *--------------------------------------------------------------------------
- * API Routes
- *--------------------------------------------------------------------------
- *
- * Here is where you can register API routes for your application. These
- * routes are loaded by the RouteServiceProvider within a group which
- * is assigned the "api" middleware group. Enjoy building your API!
- *
-*/
+Route::middleware(['auth:api'])->group(function () {
+    Route::controller(AuthenticatedSessionController::class)
+        ->prefix('user')
+        ->name('user.')
+        ->group(function () {
+            Route::post('profile', 'profile')->name('profile');
+            Route::post('logout', 'logout')->name('logout');
+            Route::post('refresh-token', 'refreshToken')->name('token.refresh');
+        });
+    });
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
-    Route::apiResource('user', UserController::class)->names('user');
-});
+Route::get('our-services', [OurServiceController::class, 'index'])->name('our-services.index');
+Route::post('contact', ContactController::class)->name('contact.store');
+Route::post('subscriber', SubscriberController::class)->name('subscriber.store');
+
+Route::controller(AuthenticatedSessionController::class)
+    ->name('auth.')
+    ->group(function () {
+        Route::post('login', 'login')->name('login');
+        Route::post('register', 'register')->name('register');
+    });

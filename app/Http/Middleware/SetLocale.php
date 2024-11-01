@@ -19,6 +19,10 @@ class SetLocale
         $languages = config('app.locales');
         $currentLocale = $request->segment(1);
 
+        // dd(app()->getLocale(), $request->segment(1));
+        if ($request->expectsJson())
+            $currentLocale = $request->header('Accept-Language', app()->getLocale());
+
         if (!in_array($currentLocale, $languages))
             $currentLocale = $languages[0] ?? 'ar';
 

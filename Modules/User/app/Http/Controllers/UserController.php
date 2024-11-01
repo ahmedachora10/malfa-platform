@@ -44,7 +44,7 @@ class UserController extends Controller
      */
     public function show(string $locale, User $user)
     {
-        return view('user::show');
+        return 'show a user details';
     }
 
     /**
@@ -61,7 +61,6 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, string $locale, User $user)
     {
-        // dd($request->validated(), UserActionDTO::fromWebRequest($request->validated() + ['user' => $user]));
         $this->userService->update(UserActionDTO::fromWebRequest($request->validated() + ['user' => $user]), $user);
         return redirect()->route('users.index')->with('success', trans('messages.updated'));
     }
